@@ -40,7 +40,8 @@ La web se abre en `http://localhost:4321`.
 - `src/layouts/BaseLayout.astro`: cabecera, menú, pie y etiquetas SEO (`title`, `description`).
 - `src/pages/index.astro`: página de inicio.
 - `src/pages/servicios.astro`: página de información.
-- `src/pages/blog/articulo-1.astro` y `articulo-2.astro`: los dos artículos.
+- `src/pages/blog/index.astro`: índice automático del blog; edita el array `articulos` con el título, enlace y resumen de cada entrada. Si cambias un título, actualízalo también aquí.
+- `src/pages/blog/articulo-1.astro` y `articulo-2.astro`: los dos artículos (enlazan de vuelta al índice).
 - `src/styles/global.css`: estilos básicos.
 - `public/images/ejemplo.svg`: imagen de ejemplo (sustitúyela por una de tu temática).
 - `.github/workflows/deploy.yml`: configuración de GitHub Actions.

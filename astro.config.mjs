@@ -6,6 +6,6 @@ export default defineConfig({
   site: 'https://jqu2011.github.io/turismo-astro/',
   // Descomenta esta línea con el nombre de tu repositorio
   // (usa '/' si tu repositorio se llama USUARIO.github.io):
-  base: '/',
+  base: '/turismo-astro',
   trailingSlash: 'always',
 });

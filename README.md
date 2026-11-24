@@ -22,7 +22,7 @@ La web se abre en `http://localhost:4321`.
    git remote set-url origin https://github.com/TU_USUARIO/TU_REPO.git
    ```
 
-3. Edita `astro.config.mjs`: pon tu usuario y el nombre de tu repo en `site`, y descomenta `base: '/TU_REPO'`.
+3. Edita `astro.config.mjs`: pon tu usuario y el nombre de tu repo en `site`, y descomenta `base: '/TU_REPO'`. No hace falta cambiar los enlaces: las rutas del menú, del blog y de la imagen usan `import.meta.env.BASE_URL` y se adaptan solas (en local valen `/` y al publicar valen `/TU_REPO/`). Si las sustituyes por rutas fijas empezadas en `/`, se romperán en GitHub Pages.
 4. Comprueba que `.github/workflows/deploy.yml` está en el proyecto.
 5. Sube los cambios:
 

@@ -1,17 +1,21 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
+// BASE_URL es '/' en local y '/nombre-repo/' al publicar en GitHub Pages.
+const base = import.meta.env.BASE_URL;
+
 // Índice automático del blog: añade un objeto por cada artículo.
 // Si cambias el título de un artículo, actualízalo también aquí.
+// Las rutas se escriben sin la barra inicial: se les añade BASE_URL al renderizar.
 const articulos = [
   {
     title: 'TODO: título del artículo 1',
-    href: '/blog/articulo-1/',
+    href: 'blog/articulo-1/',
     description: 'TODO: resumen breve del artículo 1.',
   },
   {
     title: 'TODO: título del artículo 2',
-    href: '/blog/articulo-2/',
+    href: 'blog/articulo-2/',
     description: 'TODO: resumen breve del artículo 2.',
   },
 ];
@@ -23,7 +27,7 @@ const articulos = [
   <ul>
     {articulos.map((articulo) => (
       <li>
-        <a href={articulo.href}>{articulo.title}</a>
+        <a href={`${base}${articulo.href}`}>{articulo.title}</a>
         <p>{articulo.description}</p>
       </li>
     ))}

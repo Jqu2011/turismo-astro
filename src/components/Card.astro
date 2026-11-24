@@ -1,0 +1,5 @@
+---
+import { url } from '../data/sitio.js';
+const { title, description, image, price, href } = Astro.props;
+---
+<article class="card"><img src={url('images/' + image)} alt={title} loading="lazy" width="480" height="240"/><div class="card-body"><h2>{title}</h2><p>{description}</p>{price && <strong>{price}</strong>}{href && <a class="read" href={href}>Leer artículo →</a>}</div></article>

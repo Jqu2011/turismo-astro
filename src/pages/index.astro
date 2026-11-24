@@ -1,22 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-const base = import.meta.env.BASE_URL;
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import { sitio, url } from '../data/sitio.js';
 ---
-
-<BaseLayout
-  title="TODO: título SEO descriptivo de la página de inicio"
-  description="TODO: meta descripción de unas 150 caracteres que resuma el contenido."
->
-  <h1>TODO: título principal de la web</h1>
-  <p>TODO: breve presentación del proyecto.</p>
-
-  <img
-    src={`${base}images/ejemplo.svg`}
-    alt="TODO: describe con precisión qué muestra la imagen"
-    width="640"
-    height="360"
-  />
-
-  <h2>Lo que ofrecemos</h2>
-  <p>TODO: texto relacionado con la temática elegida.</p>
-</BaseLayout>
+<Layout title="Inicio" description={sitio.description}><section class="hero"><div><span class="eyebrow">BIENVENIDOS</span><h1>{sitio.hero}</h1><p>{sitio.description}</p><a class="button" href={url('servicios/')}>Ver {sitio.section.toLowerCase()}</a></div><img src={url('images/portada.svg')} alt={sitio.name}/></section><h2>Últimos artículos</h2><div class="cards">{sitio.posts.map(post => <Card {...post} href={url('blog/' + post.slug + '/')}/>)}</div></Layout>

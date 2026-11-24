@@ -1,0 +1,7 @@
+---
+import { sitio } from '../data/sitio.js';
+const numero = sitio.whatsapp;
+const valido = /^[1-9][0-9]{7,14}$/.test(numero);
+const enlace = `https://wa.me/${numero}?text=${encodeURIComponent('Hola, quisiera información sobre ' + sitio.name)}`;
+---
+{valido ? <a class="whatsapp" href={enlace} target="_blank" rel="noopener noreferrer">WhatsApp · Consultar</a> : <p class="notice">WhatsApp: configura tu número en src/data/sitio.js para activar el contacto.</p>}

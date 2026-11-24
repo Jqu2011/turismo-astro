@@ -1,0 +1,20 @@
+---
+import { sitio } from '../data/sitio.js';
+---
+<section class="contact"><h2>Solicita información</h2><form id="contacto" data-numero={sitio.whatsapp}><label>Nombre<input name="nombre" required /></label><label>Mensaje<textarea name="mensaje" required rows="4"></textarea></label><button type="submit">Preparar consulta por WhatsApp</button><p id="aviso" aria-live="polite"></p></form></section>
+<script>
+const form = document.querySelector<HTMLFormElement>('#contacto');
+form?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const datos = new FormData(form);
+  const numero = form.dataset.numero || '';
+  const aviso = document.querySelector('#aviso');
+  if (!/^[1-9][0-9]{7,14}$/.test(numero)) {
+    if (aviso) aviso.textContent = 'Consulta preparada. Configura el número de WhatsApp para enviarla.';
+    return;
+  }
+  const texto = `Hola, soy ${datos.get('nombre')}. ${datos.get('mensaje')}`;
+  window.open(`https://wa.me/${numero}?text=${encodeURIComponent(texto)}`, '_blank', 'noopener,noreferrer');
+  if (aviso) aviso.textContent = 'Revisa y envía tu mensaje en WhatsApp.';
+});
+</script>

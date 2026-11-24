@@ -1,17 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import { sitio } from '../data/sitio.js';
 ---
-
-<BaseLayout
-  title="TODO: título SEO de la página de servicios"
-  description="TODO: meta descripción de la página de servicios."
->
-  <h1>TODO: título de la página de información</h1>
-  <p>TODO: explica los servicios, la actividad o las características del proyecto.</p>
-
-  <h2>TODO: primer servicio o característica</h2>
-  <p>TODO: describe este servicio.</p>
-
-  <h2>TODO: segundo servicio o característica</h2>
-  <p>TODO: describe este servicio.</p>
-</BaseLayout>
+<Layout title={sitio.section} description={`Conoce nuestra oferta de ${sitio.section.toLowerCase()}.`}><h1>{sitio.section}</h1><p class="lead">Descubre tres ciudades y encuentra inspiración para tu próxima escapada.</p><div class="cards">{sitio.items.map(item => <Card {...item}/>)}</div></Layout>

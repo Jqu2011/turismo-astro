@@ -1,0 +1,6 @@
+---
+import Layout from './Layout.astro';
+import { url } from '../data/sitio.js';
+const { frontmatter } = Astro.props;
+---
+<Layout title={frontmatter.title} description={frontmatter.description}><article class="article"><a href={url('blog/')}>← Volver al blog</a><h1>{frontmatter.title}</h1><p class="lead">{frontmatter.description}</p><img src={url('images/' + frontmatter.image)} alt={frontmatter.title}/><slot/></article></Layout>

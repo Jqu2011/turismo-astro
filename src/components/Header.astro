@@ -1,0 +1,5 @@
+---
+import { sitio, url } from '../data/sitio.js';
+const enlaces = [['Inicio',''],['Quiénes somos','quienes-somos/'],[sitio.section,'servicios/'],['Blog','blog/']];
+---
+<header><div class="nav wrap"><a class="brand" href={url()}>{sitio.name}</a><nav aria-label="Navegación principal">{enlaces.map(([texto,ruta]) => <a href={url(ruta)}>{texto}</a>)}</nav></div></header>

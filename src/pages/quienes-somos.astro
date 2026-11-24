@@ -1,0 +1,6 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Formulario from '../components/Formulario.astro';
+import { sitio } from '../data/sitio.js';
+---
+<Layout title="Quiénes somos" description={sitio.about}><h1>Quiénes somos</h1><p class="lead">{sitio.about}</p><div class="cards two"><section class="panel"><h2>Misión</h2><p>{sitio.mission}</p></section><section class="panel"><h2>Visión</h2><p>{sitio.vision}</p></section></div><h2>Nuestro equipo</h2><p>Un equipo de ejemplo comprometido con la atención cercana y la calidad del servicio.</p><Formulario/></Layout>

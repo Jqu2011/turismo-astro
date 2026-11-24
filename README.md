@@ -48,6 +48,12 @@ La web se abre en `http://localhost:4321`.
 
 Busca los comentarios `TODO:` y sustitúyelos por tus propios contenidos.
 
+## Recordatorio antes de empezar
+
+La plantilla incluye `src/pages/blog/index.astro` y el enlace «Blog» del menú apunta a esa página. Completa el array `articulos` con el título, el enlace y el resumen de cada entrada. **Si cambias el título de un artículo, actualízalo también en el índice.**
+
+> Para el profesor: conviene leer este párrafo en voz alta al entregar la prueba, porque el examen impreso no menciona explícitamente el índice del blog.
+
 ## Entrega
 
 La ficha se entrega firmada en papel con la URL del repositorio y la URL de GitHub Pages. Como respaldo se puede entregar también la carpeta del proyecto (en memoria o comprimida, incluyendo la carpeta oculta `.git`).
